@@ -10,32 +10,54 @@
         {
         }
 
-        public string SetEstimation(double percentOfCorrectAnswers)
+        public string GetSubjectExamResult(double percentOfCorrectAnswers)
+        {
+            var passed = "ABCDE";
+            return passed.Contains(SetEstimation(percentOfCorrectAnswers)) ? "passed" : "failed";
+        }
+
+        public int GetSubjectExamResult(string rate)
+        {
+            switch (rate)
+            {
+                case "A":
+                    return 5;
+                case "B":
+                    return 5;
+                case "C":
+                    return 4;
+                case "D":
+                    return 3;
+                case "E":
+                    return 3;
+                default:
+                    return 2;
+            }
+        }
+
+        private string SetEstimation(double percentOfCorrectAnswers)
         {
             string estimate = "";
 
             switch (percentOfCorrectAnswers)
             {
                 case >= 90:
-                    estimate = "A - perfect";
+                    estimate = "A";
                     break;
                 case >= 82:
-                    estimate = "B - very well";
+                    estimate = "B";
                     break;
                 case >= 75:
-                    estimate = "C - good";
+                    estimate = "C";
                     break;
                 case >= 67:
-                    estimate = "D - satisfactorily";
+                    estimate = "D";
                     break;
                 case >= 60:
-                    estimate = "E - enough satisfactorily";
-                    break;
-                case >= 35:
-                    estimate = "FX - not enough, with possibility to retake";
+                    estimate = "E";
                     break;
                 default:
-                    estimate = "F - retake the course";
+                    estimate = "F";
                     break;
             }
 

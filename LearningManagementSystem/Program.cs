@@ -1,4 +1,6 @@
-﻿internal class Program
+﻿using LearningManagementSystem;
+
+internal class Program
 {
     private static void Main(string[] args)
     {
