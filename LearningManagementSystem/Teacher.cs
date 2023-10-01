@@ -37,31 +37,21 @@
 
         private string SetEstimation(double percentOfCorrectAnswers)
         {
-            string estimate = "";
-
             switch (percentOfCorrectAnswers)
             {
                 case >= 90:
-                    estimate = "A";
-                    break;
+                    return "A";
                 case >= 82:
-                    estimate = "B";
-                    break;
+                    return "B";
                 case >= 75:
-                    estimate = "C";
-                    break;
+                    return "C";
                 case >= 67:
-                    estimate = "D";
-                    break;
+                    return "D";
                 case >= 60:
-                    estimate = "E";
-                    break;
+                    return "E";
                 default:
-                    estimate = "F";
-                    break;
+                    return "F";
             }
-
-            return estimate;
         }
     }
 }
