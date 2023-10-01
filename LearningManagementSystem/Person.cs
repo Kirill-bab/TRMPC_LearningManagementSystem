@@ -13,11 +13,12 @@ namespace LearningManagementSystem
         public string LastName { get; private set; }
         public readonly string Course;
 
-        public Person(int id, string firstName, string lastName)
+        public Person(int id, string firstName, string lastName, string courseName)
         {
             Id = id;
             FirstName = firstName;
             LastName = lastName;
+            Course = courseName;
         }
     }
 }
