@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LearningManagementSystem
 {
-    internal static class AppExtensions
+    internal static class CourseExtensions
     {
         public static bool HasStudent(this Course course, int studentId)
         {
