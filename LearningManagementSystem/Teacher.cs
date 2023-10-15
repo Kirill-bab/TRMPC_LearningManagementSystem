@@ -37,18 +37,27 @@
 
         public void SetWorkingHours()
         {
+            int workingHours = 0;
+
             try
             {
-                Console.WriteLine("Enter working hours: ");
-                int workingHours = Convert.ToInt32(Console.ReadLine());
+                try
+                {
+                    Console.WriteLine("Enter working hours: ");
+                    workingHours = Convert.ToInt32(Console.ReadLine());
+                }
+                catch (FormatException ex)
+                {
+                    int workingHoursPerDay = 5 / workingHours;
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception(ex.Message);
+                }
             }
-            catch (FormatException ex)
+            catch(Exception ex)
             {
                 throw;
-            }
-            catch (Exception ex)
-            {
-                throw new Exception("System error! Please try again later!");
             }
             finally
             {
