@@ -18,5 +18,7 @@ internal class Program
         Console.WriteLine(cDto);
         Console.WriteLine(cDto2);
         Console.WriteLine(cDto == cDto2);
+        Teacher teacher = new Teacher(1, "First", "Last", "C") { Id = 1};
+        teacher.SetWorkingHours();
     }
 }

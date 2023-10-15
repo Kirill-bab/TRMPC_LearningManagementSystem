@@ -35,6 +35,27 @@
             }
         }
 
+        public void SetWorkingHours()
+        {
+            try
+            {
+                Console.WriteLine("Enter working hours: ");
+                int workingHours = Convert.ToInt32(Console.ReadLine());
+            }
+            catch (FormatException ex)
+            {
+                throw;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("System error! Please try again later!");
+            }
+            finally
+            {
+                Console.WriteLine("Working hours have not been set.");
+            }
+        }
+
         private string SetEstimation(double percentOfCorrectAnswers)
         {
             switch (percentOfCorrectAnswers)
