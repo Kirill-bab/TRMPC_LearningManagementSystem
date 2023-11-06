@@ -1,12 +1,12 @@
 ﻿namespace LearningManagementSystem
 {
-    internal class Teacher : Person
+    public class Teacher : Person
     {
         public const string School_Name = "EduCenter";
 
         public int Working_Hours { get; set; }
 
-        public Teacher(int id, string firstName, string lastName, string courseName) : base(id, firstName, lastName, courseName)
+        public Teacher(string firstName, string lastName, string courseName) : base(firstName, lastName, courseName)
         {
         }
 
