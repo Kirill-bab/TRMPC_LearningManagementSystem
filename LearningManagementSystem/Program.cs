@@ -22,44 +22,44 @@ internal class Program
                .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true);
 
         var connectionStr = builder.Build().GetConnectionString("Teacher");
-        //using (IDbConnection connection = new SqlConnection(connectionStr))
-        //{
-        //    DynamicParameters firstTeacherParams = new DynamicParameters();
-        //    firstTeacherParams.Add("TeacherId", 2);
-        //    firstTeacherParams.Add("FirstName", teacherOne.FirstName);
-        //    firstTeacherParams.Add("LastName", teacherOne.LastName);
-        //    firstTeacherParams.Add("CourseName", teacherOne.Course);
-        //    firstTeacherParams.Add("WorkingHours", teacherOne.Working_Hours);
+        using (IDbConnection connection = new SqlConnection(connectionStr))
+        {
+            DynamicParameters firstTeacherParams = new DynamicParameters();
+            firstTeacherParams.Add("TeacherId", 2);
+            firstTeacherParams.Add("FirstName", teacherOne.FirstName);
+            firstTeacherParams.Add("LastName", teacherOne.LastName);
+            firstTeacherParams.Add("CourseName", teacherOne.Course);
+            firstTeacherParams.Add("WorkingHours", teacherOne.Working_Hours);
 
-        //    connection.Query<Teacher>("AddTeacher", param: firstTeacherParams, commandType: CommandType.StoredProcedure);
+            connection.Query<Teacher>("AddTeacher", param: firstTeacherParams, commandType: CommandType.StoredProcedure);
 
-        //    DynamicParameters secTeacherParams = new DynamicParameters();
-        //    secTeacherParams.Add("TeacherId", 3);
-        //    secTeacherParams.Add("FirstName", teacherSecond.FirstName);
-        //    secTeacherParams.Add("LastName", teacherSecond.LastName);
-        //    secTeacherParams.Add("CourseName", teacherSecond.Course);
-        //    secTeacherParams.Add("WorkingHours", teacherSecond.Working_Hours);
+            DynamicParameters secTeacherParams = new DynamicParameters();
+            secTeacherParams.Add("TeacherId", 3);
+            secTeacherParams.Add("FirstName", teacherSecond.FirstName);
+            secTeacherParams.Add("LastName", teacherSecond.LastName);
+            secTeacherParams.Add("CourseName", teacherSecond.Course);
+            secTeacherParams.Add("WorkingHours", teacherSecond.Working_Hours);
 
-        //    connection.Query<Teacher>("AddTeacher", param: secTeacherParams, commandType: CommandType.StoredProcedure);
-        //}
+            connection.Query<Teacher>("AddTeacher", param: secTeacherParams, commandType: CommandType.StoredProcedure);
+        }
 
-        //using (IDbConnection connection = new SqlConnection(connectionStr))
-        //{
-        //    DynamicParameters searchParams = new DynamicParameters();
-        //    searchParams.Add("TeacherId", 2);
+        using (IDbConnection connection = new SqlConnection(connectionStr))
+        {
+            DynamicParameters searchParams = new DynamicParameters();
+            searchParams.Add("TeacherId", 2);
 
-        //    var teacher = connection.Query<Teacher>("FindTeacher", param: searchParams, commandType: CommandType.StoredProcedure);
-        //}
+            var teacher = connection.Query<Teacher>("FindTeacher", param: searchParams, commandType: CommandType.StoredProcedure);
+        }
 
-        //using (IDbConnection connection = new SqlConnection(connectionStr))
-        //{
-        //    DynamicParameters updateParams = new DynamicParameters();
-        //    updateParams.Add("TeacherId", 2);
-        //    updateParams.Add("FirstName", teacherSecond.FirstName);
-        //    updateParams.Add("LastName", teacherSecond.LastName);
+        using (IDbConnection connection = new SqlConnection(connectionStr))
+        {
+            DynamicParameters updateParams = new DynamicParameters();
+            updateParams.Add("TeacherId", 2);
+            updateParams.Add("FirstName", teacherSecond.FirstName);
+            updateParams.Add("LastName", teacherSecond.LastName);
 
-        //    connection.Query<Teacher>("UpdateTeacherData", param: updateParams, commandType: CommandType.StoredProcedure);
-        //}
+            connection.Query<Teacher>("UpdateTeacherData", param: updateParams, commandType: CommandType.StoredProcedure);
+        }
 
         using (IDbConnection connection = new SqlConnection(connectionStr))
         {
