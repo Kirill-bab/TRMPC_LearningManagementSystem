@@ -1,0 +1,13 @@
+{
+  "profiles": {
+    "LearningManagementSystem": {
+      "commandName": "Project"
+    },
+    "QA": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "QA"
+      }
+    }
+  }
+}

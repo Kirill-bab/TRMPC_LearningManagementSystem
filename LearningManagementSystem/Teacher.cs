@@ -1,14 +1,16 @@
 ﻿namespace LearningManagementSystem
 {
-    public class Teacher : Person
+    public class Teacher 
     {
         public const string School_Name = "EduCenter";
 
-        public int Working_Hours { get; set; }
+        public int WorkingHours { get; set; }
 
-        public Teacher(string firstName, string lastName, string courseName) : base(firstName, lastName, courseName)
-        {
-        }
+        public int TeacherId { get; init; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public string CourseName;
+
 
         public string GetSubjectExamResult(double percentOfCorrectAnswers)
         {
@@ -51,6 +53,18 @@
                     return "E";
                 default:
                     return "F";
+            }
+        }
+
+        public override string ToString()
+        {
+            try
+            {
+                return $"{TeacherId}\n{FirstName}\n{LastName}\n{CourseName}\n{WorkingHours}";
+            }
+            catch(Exception ex)
+            {
+                return "Such object is not present!";
             }
         }
     }

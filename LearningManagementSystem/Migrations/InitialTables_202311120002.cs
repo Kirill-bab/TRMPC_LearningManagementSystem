@@ -1,0 +1,27 @@
+﻿using FluentMigrator;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace LearningManagementSystem.Migrations
+{
+    [Migration(202311120002)]
+    public class InitialTables_202311120002 : Migration
+    {
+        public override void Down()
+        {
+            
+        }
+
+        public override void Up()
+        {
+            Create.Table("Company")
+                .WithColumn("Id").AsGuid().NotNullable().PrimaryKey()
+                .WithColumn("Name").AsString(50).NotNullable()
+                .WithColumn("Address").AsString(60).NotNullable()
+                .WithColumn("Country").AsString(50).NotNullable();
+        }
+    }
+}
