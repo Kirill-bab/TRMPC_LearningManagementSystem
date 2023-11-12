@@ -58,14 +58,7 @@
 
         public override string ToString()
         {
-            try
-            {
-                return $"{TeacherId}\n{FirstName}\n{LastName}\n{CourseName}\n{WorkingHours}";
-            }
-            catch(Exception ex)
-            {
-                return "Such object is not present!";
-            }
+           return $"{TeacherId}\n{FirstName}\n{LastName}\n{CourseName}\n{WorkingHours}";
         }
     }
 }
