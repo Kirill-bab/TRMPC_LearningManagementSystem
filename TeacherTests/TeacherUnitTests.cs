@@ -2,14 +2,15 @@ using LearningManagementSystem;
 
 namespace TeacherTests
 {
+    [TestFixture]
     public class Tests
     {
-        Teacher teacher = new Teacher();
+        Teacher teacher;
 
         [SetUp]
         public void Setup()
         {
-
+            teacher = new Teacher();
         }
 
         [TestCase(90)]
